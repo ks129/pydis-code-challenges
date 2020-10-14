@@ -97,7 +97,9 @@ WSGI_APPLICATION = 'code_challenges.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {}  # Database support not enabled yet
+DATABASES = {
+    'default': env.db(),
+}
 
 
 # Password validation
