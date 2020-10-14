@@ -96,7 +96,6 @@ class SiteManager:
 
     def run(self) -> None:
         """Runs server with standard Django runner (dev) or with pyuwsgi (production)."""
-
         in_reloader = os.environ.get('RUN_MAIN') == 'true'
 
         # Prevent preparing twice when in dev mode due to reloader
