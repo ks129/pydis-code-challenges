@@ -38,11 +38,13 @@ jobs:
             ${{ steps.python.outputs.python-version }}-\
             ${{ hashFiles('Pipfile') }}-\
             ${{ hashFiles('Pipfile.lock') }}"
-          # Don't restore on a different (older) Python version cause I'm unsure if it's safe.
           restore-keys: "${{ runner.os }}-\
             python-\
             ${{ steps.python.outputs.python-version }}-\
             ${{ hashFiles('Pipfile') }}"
+            
+      - name: Prepend PATH
+        run: echo '::add-path::${{ env.PYTHONUSERBASE }}/bin'
             
       - name: Restore pre-commit environment
         uses: actions/cache@v2
@@ -52,9 +54,6 @@ jobs:
             precommit-\
             ${{ steps.python.outputs.python-version }}-\
             ${{ hashFiles('.pre-commit-config.yaml') }}"
-
-      - name: Prepend PATH
-        run: echo '::add-path::${{ env.PYTHONUSERBASE }}/bin'
 
       - name: Install pipenv
         run: pip install pipenv
