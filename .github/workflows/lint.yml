@@ -27,40 +27,7 @@ jobs:
         with:
           python-version: '3.9'
 
-      - name: Restore Python environment
-        id: pycache
-        uses: actions/cache@v2
-        with:
-          path: ${{ env.PYTHONUSERBASE }}
-          key: "${{ runner.os }}-\
-            python-\
-            ${{ steps.python.outputs.python-version }}-\
-            ${{ hashFiles('Pipfile') }}-\
-            ${{ hashFiles('Pipfile.lock') }}"
-          restore-keys: "${{ runner.os }}-\
-            python-\
-            ${{ steps.python.outputs.python-version }}-\
-            ${{ hashFiles('Pipfile') }}"
-
-      - name: Prepend PATH
-        run: echo '${{ env.PYTHONUSERBASE }}/bin' >> $GITHUB_PATH
-
-      - name: Restore pre-commit environment
-        uses: actions/cache@v2
-        with:
-          path: ${{ env.PRE_COMMIT_HOME }}
-          key: "${{ runner.os }}-\
-            precommit-\
-            ${{ steps.python.outputs.python-version }}-\
-            ${{ hashFiles('.pre-commit-config.yaml') }}"
-
-      - name: Install pipenv
-        run: pip install pipenv
-        if: ${{ success() && steps.pycache.outputs.cache-hit != 'true' }}
-
-      - name: Install dependencies using pipenv
-        run: pipenv install --dev --deploy --system
-        if: ${{ success() && steps.pycache.outputs.cache-hit != 'true' }}
-
       - name: Run pre-commit hooks
-        run: pre-commit --all-files
+        uses: pre-commit/action@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
