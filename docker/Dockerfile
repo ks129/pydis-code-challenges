@@ -11,7 +11,7 @@ ENV PIP_NO_CACHE_DIR=false \
 # Install git
 RUN apt-get -y update \
     && apt-get install -y \
-        git \
+        git gcc \
     && rm -rf /var/lib/apt/lists/*
 
 # Create non-root user.

@@ -35,7 +35,7 @@ class SiteManager:
             log.info("Starting in debug mode.")
 
     @staticmethod
-    def create_superuser(self) -> None:
+    def create_superuser() -> None:
         """Create Django superuser for development environment."""
         log.info("Creating a superuser.")
 
@@ -101,7 +101,7 @@ class SiteManager:
 
         # Prevent preparing twice when in dev mode due to reloader
         if not self.debug or in_reloader:
-            self.prepare_server()
+            self.prepare_site()
 
         log.info("Starting server...")
 
