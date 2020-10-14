@@ -107,7 +107,7 @@ class SiteManager:
 
         # Development mode
         if self.debug:
-            call_command("runserver", "0.0.0.0:8000")
+            call_command("runserver", "0.0.0.0:8080")
             return
 
         # Production mode
