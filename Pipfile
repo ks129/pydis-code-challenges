@@ -25,7 +25,7 @@ django-environ = "~=0.4.5"
 python_version = "3.9"
 
 [scripts]
-run = "python manage.py runserver"
+start = "python manage.py runserver"
 makemigrations = "python manage.py makemigrations"
 django_shell = "python manage.py shell"
 lint = "pre-commit run --all-files"
