@@ -33,9 +33,6 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ks129/pydis-code-challenges:latest
-            ks129/pydis-code-challenges:1.0.0
-            ks129/pydis-code-challenges:main
             ghcr.io/ks129/pydis-code-challenges:latest
             ghcr.io/ks129/pydis-code-challenges:1.0.0
             ghcr.io/ks129/pydis-code-challenges:main
