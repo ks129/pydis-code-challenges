@@ -28,7 +28,7 @@ psycopg2-binary = "~=2.8.6"
 python_version = "3.9"
 
 [scripts]
-start = "python manage.py runserver"
+start = "python manage.py run"
 makemigrations = "python manage.py makemigrations"
 django_shell = "python manage.py shell"
 lint = "pre-commit run --all-files"
