@@ -1,0 +1,32 @@
+version: "3.6"
+
+services:
+  postgres:
+    image: postgres:13-alpine
+    ports:
+      - "127.0.0.1:7777:5432"
+    environment:
+      POSTGRES_DB: code_challenges
+      POSTGRES_PASSWORD: code_challenges
+      POSTGRES_USER: code_challenges
+
+  web:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    command: ["run", "--debug"]
+    ports:
+      - "127.0.0.1:8080:8080"
+    depends_on:
+      - postgres
+    tty: true
+    volumes:
+      - .:/app:ro
+      - staticfiles:/var/www/static
+    environment:
+      DATABASE_URL: postgres://code_challenges:code_challenges@postgres:5432/code_challenges
+      SECRET_KEY: we-are-currently-in-debug-mode
+      STATIC_ROOT: /var/www/static
+
+volumes:
+  staticfiles:
