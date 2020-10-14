@@ -63,4 +63,4 @@ jobs:
         if: ${{ success() && steps.pycache.outputs.cache-hit != 'true' }}
 
       - name: Run pre-commit hooks
-        run: pipenv run lint
+        run: pre-commit --all-files
