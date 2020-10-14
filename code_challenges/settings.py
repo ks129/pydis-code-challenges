@@ -15,10 +15,19 @@ import secrets
 import sys
 from pathlib import Path
 
+import sentry_sdk
 from environ import Env
+from sentry_sdk.integrations.django import DjangoIntegration
 
 env = Env(
-    DEBUG=(bool, False)
+    DEBUG=(bool, False),
+    SENTRY_DSN=(str, "")
+)
+
+sentry_sdk.init(
+    dsn=env('SENTRY_DSN'),
+    integrations=[DjangoIntegration()],
+    send_default_pii=True
 )
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
