@@ -1,0 +1,68 @@
+name: Lint (pre-commit)
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    env:
+      PIP_NO_CACHE_DIR: false
+      PIP_USER: 1 
+      PIPENV_HIDE_EMOJIS: 1
+      PIPENV_IGNORE_VIRTUALENVS: 1
+      PIPENV_NOSPIN: 1
+      PYTHONUSERBASE: ${{ github.workspace }}/.cache/py-user-base
+      PRE_COMMIT_HOME: ${{ github.workspace }}/pre-commit-cache
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        id: python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+
+      - name: Restore Python environment
+        id: pycache
+        uses: actions/cache@v2
+        with:
+          path: ${{ env.PYTHONUSERBASE }}
+          key: "${{ runner.os }}-\
+            python-\
+            ${{ steps.python.outputs.python-version }}-\
+            ${{ hashFiles('Pipfile') }}-\
+            ${{ hashFiles('Pipfile.lock') }}"
+          # Don't restore on a different (older) Python version cause I'm unsure if it's safe.
+          restore-keys: "${{ runner.os }}-\
+            python-\
+            ${{ steps.python.outputs.python-version }}-\
+            ${{ hashFiles('Pipfile') }}"
+            
+      - name: Restore pre-commit environment
+        uses: actions/cache@v2
+        with:
+          path: ${{ env.PRE_COMMIT_HOME }}
+          key: "${{ runner.os }}-\
+            precommit-\
+            ${{ steps.python.outputs.python-version }}-\
+            ${{ hashFiles('.pre-commit-config.yaml') }}"
+
+      - name: Prepend PATH
+        run: echo '::add-path::${{ env.PYTHONUSERBASE }}/bin'
+
+      - name: Install pipenv
+        run: pip install pipenv
+        if: ${{ success() && steps.pycache.outputs.cache-hit != 'true' }}
+
+      - name: Install dependencies using pipenv
+        run: pipenv install --dev --deploy --system
+        if: ${{ success() && steps.pycache.outputs.cache-hit != 'true' }}
+
+      - name: Run pre-commit hooks
+        run: pipenv run lint
