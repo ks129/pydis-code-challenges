@@ -1,0 +1,32 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+flake8 = "~=3.8.4"
+pre-commit = "~=2.7.1"
+flake8-annotations = "~=2.4.1"
+flake8-bandit = "~=2.1.2"
+flake8-bugbear = "~=20.1.4"
+flake8-docstrings = "~=1.5.0"
+flake8-import-order = "~=0.18.1"
+flake8-string-format = "~=0.3"
+flake8-tidy-imports = "~=4.1"
+flake8-todo = "~=0.7"
+mccabe = "~=0.6.1"
+pep8-naming = "~=0.11.1"
+
+[packages]
+django = "~=3.1.2"
+django-environ = "~=0.4.5"
+
+[requires]
+python_version = "3.9"
+
+[scripts]
+start = "python manage.py runserver"
+makemigrations = "python manage.py makemigrations"
+django_shell = "python manage.py shell"
+lint = "pre-commit run --all-files"
+precommit = "pre-commit install"
