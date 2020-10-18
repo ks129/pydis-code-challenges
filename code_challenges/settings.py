@@ -61,10 +61,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'django_simple_bulma',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -144,6 +147,8 @@ MEDIA_ROOT = env('MEDIA_ROOT', default='/site/media')
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+
+    'django_simple_bulma.finders.SimpleBulmaFinder',
 ]
 
 # Logging
@@ -185,4 +190,10 @@ LOGGING = {
             )
         }
     }
+}
+
+# Django Simple Bulma settings
+BULMA_SETTINGS = {
+    "output_style": "compressed",
+    "fontawesome_token": "22f9c684dc",
 }
