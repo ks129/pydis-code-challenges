@@ -55,6 +55,8 @@ else:
 # Application definition
 
 INSTALLED_APPS = [
+    'code_challenges.apps.main',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -64,6 +66,8 @@ INSTALLED_APPS = [
 
     'django_simple_bulma',
 ]
+
+AUTH_USER_MODEL = "main.User"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
