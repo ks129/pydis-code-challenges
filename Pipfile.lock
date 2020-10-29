@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "c11219edb29bfbc9aee3ac75485ffaf8c940a57a974718b40b335c36723e7cd8"
+            "sha256": "a4db9382d5ecea12ac7fc2877aec6339811664749a1a69fce06c89a10988b123"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -303,10 +303,10 @@
         },
         "gitpython": {
             "hashes": [
-                "sha256:138016d519bf4dd55b22c682c904ed2fd0235c3612b2f8f65ce218ff358deed8",
-                "sha256:a03f728b49ce9597a6655793207c6ab0da55519368ff5961e4a74ae475b9fa8e"
+                "sha256:6eea89b655917b500437e9668e4a12eabdcf00229a0df1762aabd692ef9b746b",
+                "sha256:befa4d101f91bad1b632df4308ec64555db684c360bd7d2130b4807d49ce86b8"
             ],
-            "version": "==3.1.9"
+            "version": "==3.1.11"
         },
         "identify": {
             "hashes": [
@@ -347,11 +347,11 @@
         },
         "pre-commit": {
             "hashes": [
-                "sha256:810aef2a2ba4f31eed1941fc270e72696a1ad5590b9751839c90807d0fff6b9a",
-                "sha256:c54fd3e574565fe128ecc5e7d2f91279772ddb03f8729645fa812fe809084a70"
+                "sha256:92c62687ff39b92dc700d68369ec9081de85c2e0373d8bf5fc07a36116ddec4e",
+                "sha256:973b8f53e426266cfb136886a1fcfdbea2ca2641dde77f4ad9b4f9a7e174f742"
             ],
             "index": "pypi",
-            "version": "==2.7.1"
+            "version": "==2.8.0"
         },
         "pycodestyle": {
             "hashes": [
@@ -427,10 +427,10 @@
         },
         "virtualenv": {
             "hashes": [
-                "sha256:0ebc633426d7468664067309842c81edab11ae97fcaf27e8ad7f5748c89b431b",
-                "sha256:2a72c80fa2ad8f4e2985c06e6fc12c3d60d060e410572f553c90619b0f6efaf3"
+                "sha256:b0011228208944ce71052987437d3843e05690b2f23d1c7da4263fde104c97a2",
+                "sha256:b8d6110f493af256a40d65e29846c69340a947669eec8ce784fcf3dd3af28380"
             ],
-            "version": "==20.0.35"
+            "version": "==20.1.0"
         }
     }
 }
