@@ -49,7 +49,7 @@ elif "CI" in os.environ:
     ALLOWED_HOSTS = ["*"]
     SECRET_KEY = secrets.token_urlsafe(32)
 else:
-    ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=["userchallenges.pydis.com"])
+    ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=["user-challenges.pydis.com"])
     SECRET_KEY = env("SECRET_KEY")
 
 # Application definition
