@@ -23,7 +23,7 @@ django-environ = "~=0.4.5"
 sentry-sdk = "~=0.19"
 pyuwsgi = "~=2.0.19"
 psycopg2-binary = "~=2.8.6"
-django-simple-bulma = "~=2.0"
+django-simple-bulma = "~=2.1"
 whitenoise = "~=5.2.0"
 
 [requires]
