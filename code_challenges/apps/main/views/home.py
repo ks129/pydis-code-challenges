@@ -11,4 +11,5 @@ class HomeView(View):
         return HttpResponse((
             "Our page is not ready yet, "
             "but we hope to release this event as soon this is possible."
+            "Better frontend is already under development."
         ))
