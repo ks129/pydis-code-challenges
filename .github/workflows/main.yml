@@ -58,7 +58,8 @@ jobs:
             ghcr.io/ks129/pydis-code-challenges:main
 
       - name: Redeploy
-        uses: joelwmale/webhook-action@master
+        uses: fjogeleit/http-request-action@master
         with:
           url: ${{ secrets.WEBHOOK_URL }}
+          method: 'POST'
           headers: ${{ secrets.WEBHOOK_SECRET }}
