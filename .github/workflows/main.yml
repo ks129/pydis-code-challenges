@@ -62,4 +62,4 @@ jobs:
         with:
           url: ${{ secrets.WEBHOOK_URL }}
           method: 'POST'
-          headers: ${{ secrets.WEBHOOK_SECRET }}
+          customHeaders: ${{ secrets.WEBHOOK_SECRET }}
