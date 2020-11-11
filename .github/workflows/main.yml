@@ -63,3 +63,4 @@ jobs:
           url: ${{ secrets.WEBHOOK_URL }}
           method: 'POST'
           customHeaders: ${{ secrets.WEBHOOK_SECRET }}
+          preventFailureOnNoResponse: true
