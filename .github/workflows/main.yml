@@ -56,3 +56,9 @@ jobs:
             ghcr.io/ks129/pydis-code-challenges:latest
             ghcr.io/ks129/pydis-code-challenges:1.0.0
             ghcr.io/ks129/pydis-code-challenges:main
+
+      - name: Redeploy
+        uses: joelwmale/webhook-action@master
+        with:
+          url: ${{ secrets.WEBHOOK_URL }}
+          headers: ${{ secrets.WEBHOOK_SECRET }}
