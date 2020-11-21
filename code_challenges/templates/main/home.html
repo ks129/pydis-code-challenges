@@ -1,0 +1,69 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock head %}
+
+{% block header %}
+<main>
+    <div class="landing-div">
+        <section class="intro-section">
+            <h1>Python Discord Code Challenges</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod voluptas facere, doloribus natus reiciendis accusamus a autem! Quis, alias vero!</p>
+            <div class="placeholder-logo">
+                <img src="{% static 'images/placeholder-logo.png' %}" alt="">
+            </div>
+        </section>
+        <section class="timer-section">
+            <h1>Time until challenge ends: </h1>
+            <div class="timer">
+                <div class="hours">
+                    <div class="cards">
+                        <div class="card-hour-1">1</div>
+                        <div class="card-hour-2">7</div>
+                    </div>
+                    <p class="time-legend time-legend-hour">Hours</p>
+                </div>
+                <div class="minutes">
+                    <div class="cards">
+                        <div class="card-minute-1">5</div>
+                        <div class="card-minute-2">2</div>
+                    </div>
+                    <p class="time-legend time-legend-minute">Minutes</p>
+                </div>
+                <div class="seconds">
+                    <div class="cards">
+                        <div class="card-second-1">0</div>
+                        <div class="card-second-2">9</div>
+                    </div>
+                    <p class="time-legend  time-legend-second">Seconds</p>
+                </div>
+            </div>
+            <p>
+                <button>Submit</button>
+                your solution now!
+            </p>
+        </section>
+    </div>
+</main>
+{% endblock header %}
+
+{% block content %}
+<section id="about-section">
+    <div class="about-content">
+        <h1 class="about-heading">About</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas amet ab pariatur autem sint reprehenderit sequi error blanditiis tempora, dolorem doloremque quo officia perferendis sit, quia possimus, a sed assumenda!</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, suscipit.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, non? Vero mollitia id, voluptatum deserunt voluptate rem maiores sit architecto nobis corporis at maxime sapiente vitae repudiandae quis, ipsam repellat quas dolorum incidunt illum! Molestias alias quam porro autem ducimus labore soluta nisi aspernatur fuga.</p>
+    </div>
+    <div class="illustration">
+        <img src="{% static 'images/coding-illustration.svg' %}" alt="">
+    </div>
+</section>
+
+<script>
+    const endTime = "{{ challenge_end_time }}";
+</script>
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock content %}

@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+:root {
+    --base-text-color: #23272A;
+    --nav-background-color: #7289da;
+    --nav-link-color: rgb(233, 233, 233);
+    --discord-not-dark: #2C2F33;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Itim", cursive;
+    font-weight: normal;
+}
+
+p {
+    line-height: 30px;
+    font-size: 16px;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+header nav {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav-left,
+#nav-right {
+    flex-grow: 1;
+}
+
+#nav-center {
+    flex-grow: 3;
+}
+
+nav ul li {
+    margin: 10px 20px;
+}
+
+.nav-link {
+    color: var(--nav-link-color);
+    font-weight: bold;
+    padding: 10px;
+}
+
+.nav-link-text:hover {
+    background: var(--discord-not-dark);
+}
+
+.branding {
+    font-family: "Itim", cursive;
+    font-size: 26px;
+    font-weight: normal;
+}
+
+.nav-link-pydis img {
+    height: 50px;
+    width: auto;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+footer {
+    margin-top: 10vh;
+    background-color: var(--discord-not-dark);
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    color: var(--nav-link-color);
+}

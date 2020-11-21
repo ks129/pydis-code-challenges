@@ -1,5 +1,6 @@
 from django.core.handlers.wsgi import WSGIRequest
 from django.http import HttpResponse
+from django.shortcuts import render
 from django.views import View
 
 
@@ -8,7 +9,8 @@ class HomeView(View):
 
     def get(self, request: WSGIRequest) -> HttpResponse:
         """Show home page."""
-        return HttpResponse((
-            "Our page is not ready yet, "
-            "but we hope to release this event as soon this is possible."
-        ))
+        from datetime import datetime, timedelta, timezone
+        context = {
+            "challenge_end_time": (datetime.now() + timedelta(hours=20)).isoformat()
+        }
+        return render(request, "main/home.html", context)

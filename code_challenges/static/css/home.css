@@ -1,0 +1,102 @@
+:root {
+    --time-background-color: #2c2f33;
+}
+
+.landing-div {
+    background-color: #330caa;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 2 1'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%23330caa'/%3E%3Cstop offset='1' stop-color='%2324c5ff'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%237289da' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%237289da' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='c' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='2' y2='2'%3E%3Cstop offset='0' stop-color='%237289da' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%237289da' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='2' height='1'/%3E%3Cg fill-opacity='0.5'%3E%3Cpolygon fill='url(%23b)' points='0 1 0 0 2 0'/%3E%3Cpolygon fill='url(%23c)' points='2 1 2 0 0 0'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    padding: 20vh 50px 20vh 50px;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+}
+
+section * {
+    margin: 10px 0;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer * {
+    margin: 0 5px;
+}
+
+.timer .cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards * {
+    margin: 0 5px;
+    background-color: var(--time-background-color);
+    font-size: 50px;
+    padding: 10px 20px;
+    border-radius: 7px;
+    overflow: hidden;
+    font-weight: bold;
+    color: white;
+}
+
+.timer .time-legend {
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+.timer-section p {
+    font-size: 22px;
+}
+
+.timer-section p button {
+    background: var(--time-background-color);
+    border: none;
+    font-size: 22px;
+    padding: 10px;
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+main {
+    overflow: hidden;
+}
+
+#about-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--base-text-color);
+}
+
+.about-content {
+    width: 50%;
+}
+
+.about-heading {
+    margin-bottom: 50px;
+    font-size: 2em;
+}
+
+.illustration img{
+    height: 250px;
+    width: auto;
+}
+
+.placeholder-logo img{
+    height: 100px;
+    width: auto;
+}
